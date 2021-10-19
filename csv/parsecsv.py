@@ -23,20 +23,24 @@ DATAFILE = "745090.csv"
 def parse_file(datafile):
     name = ""
     data = []
+
     with open(datafile, 'rb') as f:
-        file = csv.reader(f)
-        line1 = file.next();
-        name = line1[1];
-        headers = file.next();
+        reader = csv.reader(f)
+        line1 = reader.next()
+        name = line1[1]
+        headers = reader.next()
 
-        for row in range(2, file.line_num):
-            line_items = file.next();
-            for column in range(0, len(line_items)):
-                data[row][column] = line_items[column]
+        for row in reader:
+            row_data = []
+            for column in range(0, len(row)-1):
+                row_data.append(row[column])
+            data.append(row_data)
 
-        # print len(headers)
+    print(data[0][1])
+    print(data[2][0])
+    print(data[2][5])
     # Do not change the line below
-    return (name, data)
+    return name, data
 
 
 def test():
