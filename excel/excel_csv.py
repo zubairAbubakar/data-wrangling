@@ -45,11 +45,6 @@ def parse_file(datafile):
 
     return data
 
-# Client ID: 625928659364-687qeh4ofa617gnb70mi0j3bs1alefpl.apps.googleusercontent.com
-# Client Secret: tilyctQfb6H0fqtdjZEovhp6
-
-# EAAplzkUdICoBAN0FyZBEfFJIES6HZAlDAXtGKyliOzhNGtltIx3oulUR24iC6z6QWSxhhR8wbiYhoSwrLW6ESvu5xmvDzOe3yrsuLwWMOTTNJlQoX5KFMdQRplCRayocUeSdh3k07sLCKHqov19TwrfApd1ZBmZCD5R1jMXaZBQowST5XSmnzb3oSAvLr7bMZD
-
 def save_file(data, filename):
     with open(filename, "w") as f:
         w = csv.writer(f, delimiter='|')
